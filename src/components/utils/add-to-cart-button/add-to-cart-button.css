@@ -1,0 +1,61 @@
+.icon-btn {
+    position: relative;
+    background: black;
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-size: 14px;
+  }
+  
+  .icon-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .icon-btn::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%; /* place it above */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px;
+    white-space: nowrap;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+
+  .icon-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: black;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .icon-btn:hover::before,
+  .icon-btn:hover::after {
+  opacity: 1;
+}
+
+#add-to-cart-toast {
+    font-size: 0.8rem;
+    width: 10rem;
+    top: -167%;
+    border-radius: 6px;
+}

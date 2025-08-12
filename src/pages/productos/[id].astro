@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SpecificProductPageLoader from "../../components/products/specific-product-page/specific-product-page-loader";
+import decodeJWT from "../../lib/decode-jwt";
+const { params } = Astro;
+const sessionCookie = Astro.cookies.get("sb-access-token");
+const userSession = sessionCookie?.value ? decodeJWT(sessionCookie.value) : null;
+---
+
+<Layout title="Fragancias" >
+    <SpecificProductPageLoader productId={params.id} userSession={userSession} client:load>
+</Layout>

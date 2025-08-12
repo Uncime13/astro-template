@@ -1,0 +1,20 @@
+.accordion {
+    --bs-accordion-active-color: #ffffff;
+    --bs-accordion-active-bg: rgb(100, 100, 100);
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgb(150, 150, 150);
+}
+
+.form-check-input:checked {
+    background-color: black;
+    border-color: rgb(150, 150, 150);
+}
+
+.form-check-input:focus {
+    border-color: black;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgb(200, 200, 200);
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: var(--bs-accordion-btn-icon);
+}

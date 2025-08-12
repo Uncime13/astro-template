@@ -1,0 +1,32 @@
+.icon-card {
+    padding: 0.5rem 0; /* Less padding */
+  }
+  
+  .icon-title {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  
+  .icon-description {
+    font-size: 0.85rem;
+    line-height: 1.2;
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .icon-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.25rem;
+    }
+  
+    .icon-title {
+      font-size: 0.95rem;
+    }
+  
+    .icon-description {
+      font-size: 0.75rem;
+    }
+  }
+  

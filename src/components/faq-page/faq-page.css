@@ -1,0 +1,31 @@
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.image-card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .image-card-hover:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Limit modal height and make body scrollable */
+.custom-scroll-modal .modal-content {
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .scrollable-modal-body {
+    overflow-y: auto;
+    max-height: 60vh;
+    padding-right: 0.5rem;
+  }
+  
+  

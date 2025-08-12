@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactUsPage from "../components/contact-us-page/contact-us-page";
+import GoogleMapsIframe from "../components/google-maps-iframe/google-maps-iframe";
+---
+
+<Layout title="Contact Us">
+    <ContactUsPage client:load />
+    <GoogleMapsIframe client:visible />
+</Layout>

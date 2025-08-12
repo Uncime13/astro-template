@@ -1,5 +1,5 @@
 {
-  "name": "astro-template",
+  "name": "astro-ecommerce-place-holder",
   "description": "Build a personal website, blog, or portfolio with Astro.",
   "cloudflare": {
     "label": "Astro Framework Starter",
@@ -11,27 +11,45 @@
       "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/5ca0ca32-e897-4699-d4c1-6b680512f000/public"
     ],
     "preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/33bbbf02-eda2-4d3f-b244-c27a280f3900/public",
-    "publish": true
+    "dash": true
   },
   "dependencies": {
-    "@astrojs/cloudflare": "12.6.0",
-    "@astrojs/mdx": "4.3.0",
-    "@astrojs/rss": "4.0.11",
-    "@astrojs/sitemap": "3.4.1",
-    "astro": "5.10.1",
-    "typescript": "5.8.3"
+    "@astrojs/cloudflare": "^12.6.3",
+    "@astrojs/mdx": "^4.3.3",
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.4.2",
+    "@hookform/resolvers": "^5.0.1",
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.49.4",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^5.12.9",
+    "dompurify": "^3.2.6",
+    "form-data": "^4.0.2",
+    "forward-ref": "^1.0.0",
+    "json-server": "^0.17.0",
+    "mailgun.js": "^12.0.1",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.9",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.56.1",
+    "react-icons": "^5.5.0",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
-    "wrangler": "4.21.x"
+    "@cloudflare/workers-types": "^4.20250204.0",
+    "sass": "^1.55.0",
+    "wrangler": "^4.19.1"
   },
   "scripts": {
     "astro": "astro",
     "build": "astro build",
-    "cf-typegen": "wrangler types",
     "check": "astro build && tsc && wrangler deploy --dry-run",
-    "deploy": "wrangler deploy",
+    "deploy": "astro build && wrangler deploy",
     "dev": "astro dev",
-    "preview": "astro build && wrangler dev"
+    "preview": "astro build && wrangler dev",
+    "types": "wrangler types"
   },
   "type": "module"
 }

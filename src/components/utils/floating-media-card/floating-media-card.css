@@ -1,0 +1,29 @@
+.FloatingMediaCard_floating-icon-wrapper {
+  position: fixed;
+  bottom: 4vh;
+  left: 20px;
+  z-index: 1050;
+  }
+  
+  .FloatingMediaCard_icon-btn {
+    position: relative;
+    display: inline-block;
+    color: #f80000f8;
+    cursor: pointer;
+  }
+  
+  .FloatingMediaCard_hover-card {
+    position: absolute;
+    bottom: 10vh;
+    left: 2.5vw;
+    width: 250px;
+    border-radius: 0.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .FloatingMediaCard_hover-card.show {
+    opacity: 1;
+    pointer-events: auto;
+  }

@@ -1,50 +1,159 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from "../layouts/Layout.astro";
+import CardImageZoom from "../components/card-image-zoom/card-image-zoom";
+import Carousel from "../components/utils/imageCarousel";
+import ProductsGridLoader from "../components/products/products-grid/products-grid-loader";
+import ImageBanner from "../components/utils/image-banner/imageBanner";
+import SmallImageCard from "../components/small-image-card/smallImageCard";
+import IconCard from "../components/utils/icon-card/iconCard";
+import FloatingVideoCard from "../components/utils/floating-video-card/floatingVideoCard";
+import { FaTruck, FaRegThumbsUp, FaLock, FaWhatsapp } from "react-icons/fa";
+
+const carouselImages = [
+  "https://xzjovoflnmqonwjjstch.supabase.co/storage/v1/object/public/ecommerce-demo-bucket/utils/sauvage-carousel.png",
+  "https://xzjovoflnmqonwjjstch.supabase.co/storage/v1/object/public/ecommerce-demo-bucket/utils/tom-ford-carousel.png",
+  "https://xzjovoflnmqonwjjstch.supabase.co/storage/v1/object/public/ecommerce-demo-bucket/utils/aqua-di-parma-carousel.png",
+];
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title="Inicio">
+  <main>
+    <Carousel images={carouselImages} client:load />
+    <div class="g-3 pt-2" style="display: flex; flex-wrap: wrap;">
+      <div class="col-12 col-md-4">
+        <CardImageZoom
+          alt="Fragancias Femeninas"
+          href="/"
+          bg_img="https://xzjovoflnmqonwjjstch.supabase.co/storage/v1/object/public/ecommerce-demo-bucket/utils/fragancias-femeninas.png"
+        />
+      </div>
+      <div class="col-12 col-md-4">
+        <CardImageZoom
+          alt="Fragancias Masculinas"
+          href="/"
+          bg_img="https://xzjovoflnmqonwjjstch.supabase.co/storage/v1/object/public/ecommerce-demo-bucket/utils/fragancias-masculinas.png"
+        />
+      </div>
+      <div class="col-12 col-md-4">
+        <CardImageZoom
+          alt="Fragancias Unisex"
+          href="/"
+          bg_img="https://xzjovoflnmqonwjjstch.supabase.co/storage/v1/object/public/ecommerce-demo-bucket/utils/fragancias-unisex.png"
+        />
+      </div>
+    </div>
+    <section class="py-5">
+      <div class="container text-center">
+        <h3 class="display-5 fw-bold text-black mb-3">Lo más nuevo</h3>
+        <h4 class="fs-4 text-secondary">
+          Aprovecha las novedades de nuestro catálogo
+        </h4>
+      </div>
+    </section>
+    <ProductsGridLoader endpoint="fetch-most-sold-products" client:visible />
+    <div class="g-3 pt-2" style="display: flex; flex-wrap: wrap;">
+      <div class="col-12 col-md-6">
+        <CardImageZoom
+          alt="Ofertas del mes"
+          href="/"
+          bg_img="https://xzjovoflnmqonwjjstch.supabase.co/storage/v1/object/public/ecommerce-demo-bucket/utils/ofertas-del-mes.png"
+        />
+      </div>
+      <div class="col-12 col-md-6">
+        <CardImageZoom
+          alt="Sets de perfumes"
+          href="/"
+          bg_img="https://xzjovoflnmqonwjjstch.supabase.co/storage/v1/object/public/ecommerce-demo-bucket/utils/sets-nina-ricci.png"
+        />
+      </div>
+    </div>
+    <section class="py-5 border-bottom">
+      <div class="container text-center">
+        <h3 class="display-5 fw-bold text-black mb-3">Perfumes Arabes</h3>
+      </div>
+    </section>
+    <ProductsGridLoader endpoint="arabic-fragances" client:visible />
+    <ImageBanner
+      image="https://xzjovoflnmqonwjjstch.supabase.co/storage/v1/object/public/ecommerce-demo-bucket/utils/demo-banner-whatsapp.png"
+      alt="Unete a nuestro canal de whatsapp"
+    />
+    <section class="py-5">
+      <div class="container text-center">
+        <h5 class="display-5 fw-bold text-black mb-3">
+          Algunas de nuestras marcas mas populares
+        </h5>
+      </div>
+    </section>
+    <div
+      class="pt-2 justify-content-between"
+      style="display: flex; flex-wrap: wrap;">
+      <div class="col-6 col-md-3">
+        <SmallImageCard
+          alt="Carolina Herrera"
+          image="https://xzjovoflnmqonwjjstch.supabase.co/storage/v1/object/public/ecommerce-demo-bucket/brand-logos/carolina-herrera.png"
+          href="/"
+        />
+      </div>
+      <div class="col-6 col-md-3">
+        <SmallImageCard
+          alt="Dolce & Gabbana"
+          image="https://xzjovoflnmqonwjjstch.supabase.co/storage/v1/object/public/ecommerce-demo-bucket/brand-logos/dolce-and-gabbana.png"
+          href="/"
+        />
+      </div>
+      <div class="col-6 col-md-3">
+        <SmallImageCard
+          alt="Armaf"
+          image="https://xzjovoflnmqonwjjstch.supabase.co/storage/v1/object/public/ecommerce-demo-bucket/brand-logos/armaf.png"
+          href="/"
+        />
+      </div>
+      <div class="col-6 col-md-3">
+        <SmallImageCard
+          alt="Jean Paul Gaultier"
+          image="https://xzjovoflnmqonwjjstch.supabase.co/storage/v1/object/public/ecommerce-demo-bucket/brand-logos/jean-paul-gaultier.png"
+          href="/"
+        />
+      </div>
+    </div>
+    <section class="bg-black">
+      <div class="container py-1">
+        <div class="row text-center">
+          <div class="col-6 col-md-3 mb-3">
+            <IconCard
+              icon={FaTruck}
+              title="ENVIOS NACIONALES GRATIS"
+              description="En compras mayores a $1,999.00"
+              href="/preguntas-frecuentes#formas-de-envio"
+            />
+          </div>
+          <div class="col-6 col-md-3 mb-3">
+            <IconCard
+              icon={FaRegThumbsUp}
+              title="95% DE SATISFACCION"
+              description="Por parte de nuestros clientes"
+              href="/preguntas-frecuentes"
+            />
+          </div>
+          <div class="col-6 col-md-3 mb-3">
+            <IconCard
+              icon={FaLock}
+              title="PAGOS SEGUROS"
+              description="Usa tu plataforma de confianza"
+              href="/preguntas-frecuentes#formas-de-pago"
+            />
+          </div>
+          <div class="col-6 col-md-3 mb-3">
+            <IconCard
+              icon={FaWhatsapp}
+              title="CONTACTANOS POR WHATSAPP"
+              description="Atencion a cliente personalizada"
+              href="/contacto"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <FloatingVideoCard client:load />
+  </main>
+</Layout>

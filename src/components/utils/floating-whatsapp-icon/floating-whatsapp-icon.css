@@ -1,0 +1,66 @@
+.floating-icon-wrapper {
+    position: fixed;
+    top: 87vh;
+    right: 20px;
+    z-index: 1050;
+  }
+  
+  .FloatingIcon_icon-btn {
+    position: relative;
+    display: inline-block;
+    color: #43e75c;
+    cursor: pointer;
+  }
+  
+  .hover-card {
+    position: absolute;
+    bottom: 10vh;
+    right: 2.5vw;
+    width: 250px;
+    border-radius: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .hover-card.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+
+  .whatsapp-bubble {
+    background-color: #e7f9ed;
+    border: 2px solid #25d366;
+    border-radius: 20px 20px 0px 20px; /* bubble shape */
+    padding: 1rem;
+    position: relative;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .whatsapp-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -11px;
+    left: 243px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #25d366;
+    border-bottom: 0;
+    border-left: 0;
+    transform: rotateY(180deg);
+    margin-left: -4px;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #075e54;
+  }
+  
+  .card-text {
+    font-size: 0.95rem;
+    color: #3d3d3d;
+  }
+  

@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AllProductsLoader from "../components/products/all-products-page/all-products-loader"
+
+const url = new URL(Astro.request.url); // ✅ use the current request URL
+const category = url.searchParams.get('categoria');
+
+let categoryId = 0;
+switch (category) {
+  case "fragancias-femeninas":
+    categoryId = 2;
+    break;
+  case "fragancias-masculinas":
+    categoryId = 1;
+    break;
+  case "fragancias-unisex":
+    categoryId = 3;
+    break;
+}
+---
+
+<Layout title="Fragancias">
+  <AllProductsLoader initialFilters={categoryId} client:only="react" />
+</Layout>

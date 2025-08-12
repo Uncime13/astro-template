@@ -1,0 +1,5 @@
+ .smallImageCard-product-image {
+    max-height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }

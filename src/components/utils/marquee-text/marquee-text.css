@@ -1,0 +1,30 @@
+.marquee-container {
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+    background-color: black;
+  }
+  
+.set-margin-between-phrases {
+    margin-right: 200px;
+    color: white;
+}
+  .marquee {
+    display: inline-block;
+    /* white-space: nowrap; */
+    animation: marquee-scroll 20s linear infinite;
+  }
+  
+  .marquee-container:hover .marquee {
+    animation-play-state: paused;
+  }
+  
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(50%);
+    }
+    to {
+      transform: translateX(-70%);
+    }
+  }
+  
